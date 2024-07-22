@@ -1,0 +1,106 @@
+body > nav > div.links > li {
+  padding-right: 1em;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(84, 91, 98, 0.5), rgba(84, 91, 98, 0.3)), url(/img/background-1.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+}
+.links ul{
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  display: flex;
+  align-items: center;
+}
+nav {
+  box-shadow: 0px 3px 8px -4px #ccc;
+  padding: 0px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(169 169 169 / 40%);
+}
+nav .home{
+  font-size: x-large;
+  font-family: fantasy;
+  text-shadow: 3px 3px 2px #fcd465;
+  flex: 1 0 50%;
+}
+nav > .home > a {
+  color: black;
+  padding-left: 1em;
+}
+nav .links{
+  display: flex;
+  list-style: none;
+  align-items: center;
+
+}
+body > nav > div.links > li {
+  padding-right: 1em;
+}
+.nav-item{
+  margin: 0 10px;
+}
+.nav-link{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: aliceblue;
+  white-space: nowrap;
+}
+.nav-link:hover{
+  color: #fabb3c;
+  cursor: pointer;
+}
+.btn{
+  background-color: #fabb3c;
+  color: black;
+  border-radius: 12px;
+  padding: 8px 10px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 8px 5px;
+}
+.btn:hover {
+  color: aliceblue;
+  cursor: pointer;
+}
+.intro{
+  background-color: rgb(173 171 166/ 40%);
+  color: #fcc742;
+  text-align: center;
+  font-family: Arial;
+  max-width: 1000px;
+  position: relative;
+  border-radius: 12px;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 1;
+}
+.intro:hover {
+  box-shadow: 0 1px 5px black;
+  backdrop-filter: blur(35px);
+  background-color: rgb(138 137 135/ 40%);
+}
+.intro p {
+  font-size: 30px;
+}
+
+.form {
+  margin: 0 auto;
+  margin-top: 8px ; /* Center the form */
+  max-width: 500px; /* Maximum width of 500px */
+  background-color: rgba(173, 171, 166, 0.4); /* Background color with 40% opacity */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

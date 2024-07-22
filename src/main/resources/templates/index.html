@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<main>
+        <section class="intro">
+            <h1>Welcome to My gym helper</h1>
+            <p>
+                My gym helper is here to help you find the perfect diet and
+                workout. Once you select one of a hundred diets and workouts
+                created by our experienced instructors, you can find them on
+                your home screen.
+            </p>
+            <h3>
+                <a class="nav-link" th:href="@{/login}">Login</a>
+                to see check them out or
+                <a class="nav-link" th:href="@{/register}">Register</a>
+                now to create your own program.
+            </h3>
+        </section>
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>
