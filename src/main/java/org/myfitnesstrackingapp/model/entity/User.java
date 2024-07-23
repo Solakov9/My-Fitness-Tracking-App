@@ -23,10 +23,10 @@ public class User {
     private String email;
     @Column(nullable = false)
     private int age;
-
-    private Double weight;
-
-    private Double height;
+    @Column(nullable = false)
+    private Integer weight;
+    @Column(nullable = false)
+    private Integer height;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
