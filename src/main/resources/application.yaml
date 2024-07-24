@@ -25,6 +25,7 @@ logging:
         SQL: DEBUG
       nodeValue: WARN
     blog: WARN
+#    org.springframework.security: DEBUG
 server:
   port: 8080
 

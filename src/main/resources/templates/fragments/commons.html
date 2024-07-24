@@ -27,7 +27,7 @@
                         <a class="nav-link" th:href="@{/users/add-diet}">Add diet</a>
                     </li>
                 </th:block>
-                <th:block sec:authorize="hasRole('TRAINER')">
+                <th:block sec:authorize="isAuthenticated()">
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/workouts}">Workouts</a>
                     </li>
