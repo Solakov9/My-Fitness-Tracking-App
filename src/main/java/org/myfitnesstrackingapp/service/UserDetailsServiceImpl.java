@@ -35,6 +35,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     private List<GrantedAuthority> mapToGrantedAuthorities(User user) {
-        return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().name()));
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
     }
 }

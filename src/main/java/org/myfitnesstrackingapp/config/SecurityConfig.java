@@ -24,13 +24,13 @@ public class SecurityConfig {
                     formLogin.loginPage("/users/login");
                     formLogin.usernameParameter("username");
                     formLogin.passwordParameter("password");
-                    formLogin.defaultSuccessUrl("/",true);
+                    formLogin.defaultSuccessUrl("/home",true);
                     formLogin.failureUrl("/users/login-error");
                 })
                 .logout(logout ->{
                     logout.logoutUrl("/users/logout");
-                    logout.invalidateHttpSession(true);
                     logout.logoutSuccessUrl("/");
+                    logout.invalidateHttpSession(true);
                 })
 
                 .build();

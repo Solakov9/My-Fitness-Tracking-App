@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,40 +14,49 @@
 <header>
     <nav>
         <div class="home">
-            <a href="/">My gym helper</a>
+            <a sec:authorize="!isAuthenticated()" href="/">My gym helper</a>
+            <a sec:authorize="isAuthenticated()" href="/home">My gym helper</a>
         </div>
         <div class="links">
             <ul>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/users/add-workout}">Add workout</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/users/add-diet}">Add diet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/workouts}">Workouts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/diets}">Diets</a>
-            </li>
-            <li class="nav-item">
-                <form method="get" th:action="@{/users/login}">
-                <button type="submit" class="btn" >Login</button>
-                </form>
-            </li>
-            <li class="nav-item">
-                <form method="get" th:action="@{/users/register}">
-                <button type="submit" class="btn" >Register</button>
-                </form>
-            </li>
-            <li class="nav-item">
-                <form method="GET" th:action="@{/users/logout}">
-                    <button class="btn" type="submit">
-                        Logout
-                    </button>
-                </form>
-            </li>
-        </ul>
+                <th:block sec:authorize="hasRole('INSTRUCTOR')">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/users/add-workout}">Add workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/users/add-diet}">Add diet</a>
+                    </li>
+                </th:block>
+                <th:block sec:authorize="hasRole('TRAINER')">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/workouts}">Workouts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/diets}">Diets</a>
+                    </li>
+                </th:block>
+                <th:block sec:authorize="!isAuthenticated()">
+                    <li class="nav-item">
+                        <form method="get" th:action="@{/users/login}">
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form method="get" th:action="@{/users/register}">
+                            <button type="submit" class="btn">Register</button>
+                        </form>
+                    </li>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <form method="POST" th:action="@{/users/logout}">
+                            <button class="btn" type="submit">
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+                </th:block>
+            </ul>
         </div>
 
     </nav>
