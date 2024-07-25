@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<main>
+    <form class="form"
+          th:method="POST"
+          th:action="@{/users/add-workout}"
+          th:object="${workoutData}"
+    >
+        <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Add workout</span></h1>
+
+        <div class="form-group">
+            <div class="label-holder text-white textCol d-flex justify-content-center">
+                <label for="name" class="h4 mb-2">Name</label>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   id="name"
+                   name="name"
+                   th:field="*{name}"
+                   th:errorclass="'is-invalid alert-danger'"
+            />
+            <small
+                    th:each="error: ${#fields.errors('name')}"
+                    th:text="${error}"
+                    style="color: red"
+            >
+                User error messages
+
+            </small>
+        </div>
+
+        <div class="form-group">
+            <div class="label-holder text-white textCol d-flex justify-content-center">
+                <label for="level" class="h4 mb-2">Level of experience</label>
+            </div>
+            <select class="browser-default custom-select"
+                    id="level"
+                    name="level"
+                    th:field="*{level}"
+                    th:errorclass="'is-invalid alert-danger'">
+                <option value="">Select level</option>
+                <option value="BEGINNER">Beginner</option>
+                <option value="INTERMEDIATE">Intermediate</option>
+                <option value="EXPERIENCED">Experienced</option>
+            </select>
+            <small
+                    th:each="error: ${#fields.errors('level')}"
+                    th:text="${error}"
+                    style="color: red"
+            >
+                User error messages
+
+            </small>
+        </div>
+
+        <div class="form-group">
+            <div class="label-holder text-white textCol d-flex justify-content-center">
+                <label for="category" class="h4 mb-2">Category</label>
+            </div>
+            <select class="browser-default custom-select"
+                    id="category"
+                    name="category"
+                    th:field="*{category}"
+                    th:errorclass="'is-invalid alert-danger'">
+                <option value="">Select category</option>
+                <option value="FOR_MAN">For men</option>
+                <option value="FOR_WOMEN">For women</option>
+                <option value="BODY_BUILDING">Body building</option>
+                <option value="WEIGHT_LOSS">Weight loss</option>
+            </select>
+            <small
+                    th:each="error: ${#fields.errors('category')}"
+                    th:text="${error}"
+                    style="color: red"
+            >
+                User error messages
+
+            </small>
+        </div>
+
+        <div class="form-group">
+            <div class="label-holder text-white textCol d-flex justify-content-center">
+                <label for="exercises" class="h4 mb-2">Exercises</label>
+            </div>
+            <textarea class="text-area"
+                      id="exercises"
+                      name="exercises"
+                      th:field="*{exercises}"
+                      th:errorclass="'is-invalid alert-danger'"
+                      placeholder="Enter exercises here"
+            ></textarea>
+            <small
+                    th:each="error: ${#fields.errors('exercises')}"
+                    th:text="${error}"
+                    style="color: red"
+            >
+                User error messages
+
+            </small>
+        </div>
+
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn" value="addPainting">Add workout</button>
+        </div>
+
+    </form>
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>

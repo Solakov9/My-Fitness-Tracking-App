@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<main>
+    <div class="program">
+        <h1 class="user-data">
+            My program
+        </h1>
+        <table class="table">
+            <td class="cell">
+                <h3>
+                    My diet!
+                </h3>
+            </td>
+            <td class="cell">
+                <h3>
+                    My workout!
+                </h3>
+            </td>
+        </table>
+    </div>
+    <div class="window">
+        <ul class="item-list">
+            <li class="item">
+                <h2 class="user-data">
+                    Welcome <span th:text="${username}"></span>!
+                </h2>
+            </li>
+            <li >
+                <h3 class="user-data-msg">
+                    Your details:
+                </h3>
+            </li>
+            <li class="item">
+                Age: <span th:text="${age}"></span>
+            </li>
+            <li class="item">
+                Height: <span th:text="${height}"></span>cm.
+            </li>
+            <li class="item">
+                Weight: <span th:text="${weight}"></span>kg.
+            </li>
+        </ul>
+    </div>
+
+
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>

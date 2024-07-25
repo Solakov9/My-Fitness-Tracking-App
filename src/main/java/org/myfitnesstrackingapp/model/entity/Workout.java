@@ -17,29 +17,33 @@ public class Workout {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private WorkoutCategory category;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Level level;
-    @Column(name = "number_of_days", nullable = false)
-    private Integer numberOfDays;
+
     @ManyToOne(optional = false)
     private User addedBy;
-    @OneToMany
-    private Set<Exercise> exercises;
+
+    @Column
+    private String exercises;
+
     @OneToMany
     private Set<Comment> comments;
+
     @Column(name = "number_of_selections")
     private Integer numberOfSelections;
 
     private Integer likes;
 
     public Workout(){
-        this.exercises = new HashSet<>();
         this.comments = new HashSet<>();
     }
 }

@@ -95,12 +95,65 @@ body > nav > div.links > li {
 
 .form {
   margin: 0 auto;
-  margin-top: 8px ; /* Center the form */
-  max-width: 500px; /* Maximum width of 500px */
-  background-color: rgba(173, 171, 166, 0.4); /* Background color with 40% opacity */
+  margin-top: 8px ;
+  max-width: 500px;
+  background-color: rgba(173, 171, 166, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+  .window {
+    width: 300px;
+    height: auto;
+    margin-left: 20px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 1.4);
+    background-color: rgb(250 187 60);
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    font-family: Arial;
+}
+  .user-data{
+    text-align: center;
+  }
+  .user-data-msg{
+    font-size: 20px;
+  }
+  .item{
+    margin: 8px 3px ;
+  }
+  .program{
+    font-family: Arial;
+    width: 800px;
+    height: auto;
+    margin-left: 100px;
+    margin-top: 8px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 1.4);
+    background-color: rgb(250 187 60);
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+  }
+  .cell h3{
+    text-align: center;
+  }
+.text-area {
+  width: 100%;
+  max-width: 600px; /* Adjust the maximum width as needed */
+  height: 200px; /* Adjust the height as needed */
+  padding: 10px; /* Space inside the text area */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: shadow for better aesthetics */
+  resize: both; /* Allows resizing the text area */
+}
 

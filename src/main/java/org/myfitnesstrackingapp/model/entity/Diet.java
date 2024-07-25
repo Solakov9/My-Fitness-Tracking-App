@@ -17,17 +17,23 @@ public class Diet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DietCategory category;
+
     @Column(nullable = false)
     private Integer calories;
+
     @Column(nullable = false)
     private String nutrients;
+
     @ManyToOne
     private User addedBy;
+
     @OneToMany
     private Set<Comment> comments;
 

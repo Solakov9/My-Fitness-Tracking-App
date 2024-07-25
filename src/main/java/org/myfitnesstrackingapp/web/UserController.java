@@ -32,12 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/users/register")
-    public String viewRegister(Model model) {
-        if (!model.containsAttribute("registerData")) {
-            model.addAttribute("registerData", new UserRegisterDTO());
-        }
-
-
+    public String viewRegister(){
         return "register";
     }
       @PostMapping("users/register")
@@ -46,8 +41,6 @@ public class UserController {
             BindingResult bindingResult,
             RedirectAttributes redirectAttributes
     ) {
-
-          System.out.println();
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("registerData", data);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.registerData", bindingResult);

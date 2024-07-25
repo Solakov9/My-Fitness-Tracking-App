@@ -21,7 +21,7 @@ public class SecurityConfig {
                             authorizeRequest
                                     .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                                     .requestMatchers("/", "/users/login","/users/login-error","/access-denied", "/users/register").permitAll()
-                                    .requestMatchers("/add-workout").hasRole("INSTRUCTOR")
+                                    .requestMatchers("/users/add-workout").hasRole("INSTRUCTOR")
                                     .requestMatchers("/add-diet").hasRole("INSTRUCTOR")
                                     .anyRequest().authenticated();
                         }
