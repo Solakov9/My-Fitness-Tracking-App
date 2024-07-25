@@ -10,13 +10,13 @@ import org.myfitnesstrackingapp.model.entity.enums.Role;
 @NoArgsConstructor
 public class UserRegisterDTO {
     @NotBlank
-    @Size(min = 3, max = 20,message = "Username  must be between 3 and 20 characters.")
+    @Size(min = 3, max = 20,message = "Username must be between 3 and 20 characters.")
     private String username;
     @NotBlank
     @Email(message = "Email cannot be empty.")
     private String email;
     @NotBlank
-    @Size(min = 3, max = 20,message = "Password   be between 3 and 20 characters.")
+    @Size(min = 3, max = 20,message = "Password must be between 3 and 20 characters.")
     private String password;
     @NotNull(message = "Need to select option!")
     private Role role;
